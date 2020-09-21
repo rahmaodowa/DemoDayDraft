@@ -1,0 +1,20 @@
+
+<form action="/search?apple&oranges" method="GET">
+    <%# may be able to rempve apple and oranges %>
+           <input type="number" class="form-control" placeholder="Search for Zipcode" name="apples">
+              <input type="text" class="form-control" placeholder="Search for Specialty" name="oranges">
+           <button class="search-btn" type="submit">Submit</button>
+
+     </form>
+     <%#  take in search paramters to see what's available inside the database %>
+
+
+
+<ul class='listOfTherapist' >
+  <% for(var i=0; i<listOfTherapist.length; i++) {%>
+              <li> Name:  <%= listOfTherapist[i].name %>  </li>
+              <li>Zipcode:  <%= listOfTherapist[i].zipcode %>  </li>
+              <li> Specialty:  <%= listOfTherapist[i].specialty %>  </li>
+              <%# information to display on the database %>
+          <% } %>
+          </ul>
