@@ -88,10 +88,13 @@ module.exports = function(app, passport, db) {
 
         // SIGNUP =================================
         // show the signup form
-        app.get('/signup', function(req, res) {
-            res.render('signup.ejs', { message: req.flash('signupMessage') });
+        app.get('/signupClient', function(req, res) {
+            res.render('signupClient.ejs', { message: req.flash('signupMessage') });
         });
 
+        app.get('/signupTherapist', function(req, res) {
+            res.render('signupTherapist.ejs', { message: req.flash('signupMessage') });
+        });
         // process the signup form
         app.post('/signup', passport.authenticate('local-signup', {
             successRedirect : '/profile', // redirect to the secure profile section
